@@ -402,17 +402,18 @@ strong { font-weight: 700; }
   .image-break { height: 240px; padding: 1.5rem 1.2rem; }
   .image-break-text { font-size: 1rem; }
 
-  /* Card grids — all single column on mobile */
-  .card-grid, .card-grid-3 { grid-template-columns: 1fr !important; gap: 1rem; }
+  /* Card grids — all single column on mobile — force override inline styles */
+  .card-grid, .card-grid-3,
+  .section-inner .card-grid,
+  .section-inner > div[style],
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
   .card { padding: 1.3rem 1.4rem; }
   .card-dark { padding: 1.3rem 1.4rem; }
   .card-title { font-size: 1.05rem; }
   .card-text { font-size: 0.88rem; }
-
-  /* Inline grid overrides — these have inline styles so need !important */
-  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-  [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
-  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
 
   /* Comp table — make it scroll horizontally */
   .comp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; font-size: 0.8rem; }
