@@ -355,22 +355,87 @@ strong { font-weight: 700; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  :root { --header-height: auto; }
-  .report-header { flex-wrap: wrap; padding: 0.6rem 1.2rem; height: auto; }
-  .header-left { width: 100%; justify-content: space-between; }
-  .logo-text { font-size: 1.4rem; }
-  .header-right { font-size: 0.68rem; }
-  body { padding-top: 4rem; }
+  :root { --header-height: auto; --section-gap: 2.5rem; }
+
+  /* Header */
+  .report-header { flex-wrap: wrap; padding: 0.6rem 1.2rem; height: auto; gap: 0.2rem; }
+  .header-left { width: 100%; }
+  .header-sep { display: none; }
+  .header-label { display: none; }
+  .header-right { width: 100%; font-size: 0.62rem; padding-top: 0.2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .logo-text { font-size: 1.3rem; }
+  body { padding-top: 4.5rem; }
+
+  /* Hero */
+  .hero-cover { min-height: auto; padding: 5rem 1.2rem 3rem; }
+  .hero-inner { padding: 1.8rem 1.4rem; max-width: 100%; }
+  .hero-cover h1 { font-size: 1.6rem; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-eyebrow { font-size: 0.6rem; margin-bottom: 1rem; }
+  .hero-meta { gap: 0.8rem 1.2rem; font-size: 0.58rem; }
+
+  /* Type band */
+  .type-band { padding: 0.6rem 1.2rem; font-size: 0.58rem; flex-wrap: wrap; }
+
+  /* Sections */
+  .section-paper, .section-white, .section-ink { padding: var(--section-gap) 1.2rem; }
+  .section-inner, .section-narrow { padding: 0; }
   .container { padding: 0 1.2rem; }
-  .stat-banner { grid-template-columns: repeat(2, 1fr); }
-  .two-col { grid-template-columns: 1fr; }
-  .two-col-image { min-height: 280px; }
-  .card-grid-3 { grid-template-columns: 1fr; }
-  .hero-inner { padding: 2rem; }
-  .bar-label { min-width: 100px; font-size: 0.6rem; }
-  .card { padding: 1.2rem 1.4rem; }
-  h1 { font-size: 1.8rem; }
-  .pull-quote { font-size: 1.15rem; }
+
+  /* Typography */
+  h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.3rem; }
+  .pull-quote { font-size: 1.05rem; padding-left: 1rem; margin: 1.5rem 0; }
+  .section-text { font-size: 0.95rem; }
+
+  /* Stat banner */
+  .stat-banner { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 1.2rem; gap: 1.2rem; }
+  .stat-number { font-size: 1.6rem; }
+  .stat-label { font-size: 0.6rem; }
+
+  /* Two column — stack vertically */
+  .two-col { grid-template-columns: 1fr !important; }
+  .two-col-image { min-height: 220px; order: -1; }
+  .two-col-content { padding: 2rem 1.4rem; }
+
+  /* Image breaks */
+  .image-break { height: 240px; padding: 1.5rem 1.2rem; }
+  .image-break-text { font-size: 1rem; }
+
+  /* Card grids — all single column on mobile */
+  .card-grid, .card-grid-3 { grid-template-columns: 1fr !important; gap: 1rem; }
+  .card { padding: 1.3rem 1.4rem; }
+  .card-dark { padding: 1.3rem 1.4rem; }
+  .card-title { font-size: 1.05rem; }
+  .card-text { font-size: 0.88rem; }
+
+  /* Inline grid overrides — these have inline styles so need !important */
+  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+
+  /* Comp table — make it scroll horizontally */
+  .comp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; font-size: 0.8rem; }
+  .comp-table th, .comp-table td { padding: 0.6rem 0.8rem; }
+
+  /* Financial tables */
+  .fin-table { font-size: 0.82rem; }
+  .fin-table td { padding: 0.4rem 0; }
+
+  /* Bar charts */
+  .bar-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .bar-label { min-width: auto; font-size: 0.6rem; }
+  .bar-track { width: 100%; }
+  .bar-fill { font-size: 0.58rem; }
+
+  /* Badges */
+  .badge { font-size: 0.6rem; }
+
+  /* Footer */
+  .report-footer { padding: 2.5rem 1.2rem 2rem; }
+  .footer-logo-text { font-size: 1.3rem; }
+  .footer-strapline { font-size: 0.8rem; }
+  .footer-legal { font-size: 0.72rem; }
 }
 @media print { .report-header { position: static; } body { padding-top: 0; background: var(--white); } }
 </style>
