@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Noah Wire Services — Narrative Signal Intelligence Methodology">
+<meta property="og:description" content="A methodology for detecting market reality, not just measuring opinion. How structured narrative analysis outperforms traditional intelligence.">
+<meta property="og:url" content="https://ivanmassow.github.io/nw-sp-2026-x9k3/methodology.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Noah Wire Services — Narrative Signal Intelligence Methodology">
+<meta name="twitter:description" content="Detecting market reality, not just measuring opinion.">
+<title>Noah Wire Services — Narrative Signal Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --ink: #262a33;
+  --ink-light: #3d424d;
+  --ink-mid: #55596a;
+  --ink-subtle: #73788a;
+  --grey-400: #9ea2b0;
+  --grey-300: #c4c7d0;
+  --grey-200: #dfe1e6;
+  --grey-100: #eef0f3;
+  --paper: #FFF1E5;
+  --paper-light: #FFF7F0;
+  --white: #ffffff;
+  --accent: #0d7680;
+  --accent-dark: #0a5e66;
+  --accent-light: #1a9aa6;
+  --sage: #d4bfaa;
+  --sage-light: #e8d6c6;
+  --warm: #c9926b;
+  --warm-light: #e8c5a8;
+  --warm-pale: #f5e6d5;
+  --salmon: #FFA089;
+  --blush: #FFF1E5;
+  --blush-dark: #F2DFCE;
+  --teal: #0d7680;
+  --up-color: #16a34a;
+  --down-color: #cc0000;
+  --neutral-color: var(--grey-400);
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-width: 1100px;
+  --section-gap: 4.5rem;
+  --header-height: 56px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.7; font-size: 17px; font-weight: 400; -webkit-font-smoothing: antialiased; padding-top: var(--header-height); }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p { margin-bottom: 1rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); text-decoration: underline; }
+strong { font-weight: 700; }
+
+/* ===== HEADER ===== */
+.report-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--ink); height: var(--header-height);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.header-left { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.logo-text {
+  font-family: 'Montserrat', var(--font-body); font-weight: 700; font-size: 1.3rem;
+  letter-spacing: 0.22em; color: var(--white); text-transform: uppercase; text-decoration: none;
+}
+.header-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.header-label {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--salmon);
+}
+.header-right {
+  display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0;
+  font-size: 0.72rem; color: var(--grey-400); letter-spacing: 0.04em;
+}
+
+/* ===== HERO COVER ===== */
+.hero-cover {
+  position: relative; min-height: 100vh;
+  background: var(--ink); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  padding: 6rem 2.5rem 4rem; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(38,42,51,0.92) 0%, rgba(38,42,51,0.7) 40%, rgba(13,118,128,0.08) 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: 720px; text-align: center;
+  padding: 3.5rem; background: rgba(38,42,51,0.55);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+  backdrop-filter: blur(20px);
+}
+.hero-eyebrow {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--salmon); margin-bottom: 1.5rem;
+}
+.hero-cover h1 {
+  font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 1.2rem;
+}
+.hero-sub {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 400;
+  font-style: italic; color: rgba(255,255,255,0.7); line-height: 1.6;
+  max-width: 580px; margin: 0 auto 2rem;
+}
+.hero-meta {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+}
+.hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+.hero-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--salmon); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* ===== SECTIONS ===== */
+.section-paper { background: var(--paper); padding: var(--section-gap) 2.5rem; }
+.section-white { background: var(--white); padding: var(--section-gap) 2.5rem; }
+.section-ink { background: var(--ink); color: var(--white); padding: var(--section-gap) 2.5rem; }
+.section-inner { max-width: var(--max-width); margin: 0 auto; }
+.section-narrow { max-width: 800px; margin: 0 auto; }
+
+.section-label {
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-subtle); margin-bottom: 0.5rem;
+}
+.section-label-salmon { color: var(--salmon); }
+.section-label-accent { color: var(--accent); }
+
+.section-title {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 600; color: var(--ink); line-height: 1.25; margin-bottom: 0.6rem;
+}
+.section-title-light { color: var(--white); }
+
+.section-text { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); max-width: 720px; }
+.section-text-light { color: rgba(255,255,255,0.65); }
+.section-text p { margin-bottom: 1rem; }
+.section-text strong { color: var(--ink); }
+.section-text-light strong { color: var(--white); }
+
+/* ===== TWO COLUMN ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; }
+.two-col-image { background-size: cover; background-position: center; position: relative; }
+.two-col-image::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(38,42,51,0.3) 100%);
+}
+.two-col-image-right::after {
+  background: linear-gradient(to left, transparent 60%, rgba(38,42,51,0.3) 100%);
+}
+.two-col-content {
+  background: var(--ink); color: var(--white);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 3.5rem;
+}
+.two-col-content .section-label { color: var(--salmon); }
+.two-col-content .section-title { color: var(--white); margin-bottom: 1rem; }
+.two-col-content p { color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.8rem; }
+.two-col-content strong { color: var(--white); }
+
+/* ===== IMAGE BREAK ===== */
+.image-break {
+  position: relative; height: 360px;
+  background-size: cover; background-position: center;
+  display: flex; align-items: flex-end; padding: 2.5rem;
+}
+.image-break::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(rgba(38,42,51,0.15) 0%, rgba(38,42,51,0.7) 100%);
+}
+.image-break-text {
+  position: relative; z-index: 1;
+  font-family: var(--font-display); font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400; font-style: italic;
+  color: var(--white); max-width: 600px; line-height: 1.4;
+}
+
+/* ===== CARDS ===== */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+
+.card {
+  background: var(--white); border: 1px solid var(--grey-200);
+  border-radius: 4px; padding: 1.8rem 2rem;
+  transition: box-shadow 0.2s ease;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(38,42,51,0.07); }
+
+.card-dark {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 1.8rem 2rem;
+}
+
+.card-accent-top { border-top: 3px solid var(--accent); }
+.card-warm-top { border-top: 3px solid var(--warm); }
+.card-salmon-top { border-top: 3px solid var(--salmon); }
+
+.card-label {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.5rem;
+}
+.card-label-warm { color: var(--warm); }
+.card-label-salmon { color: var(--salmon); }
+
+.card-title {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 0.6rem;
+}
+.card-title-light { color: var(--white); }
+
+.card-text { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; }
+.card-text-light { color: rgba(255,255,255,0.6); }
+.card-text strong { color: var(--ink); }
+.card-text-light strong { color: var(--white); }
+
+/* ===== PULL QUOTE ===== */
+.pull-quote {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 400; font-style: italic; line-height: 1.5;
+  color: var(--ink-light); border-left: 3px solid var(--teal);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 2rem 0; max-width: 600px;
+}
+.pull-quote-light { color: rgba(255,255,255,0.6); }
+.pull-quote-warm { border-left-color: var(--warm); }
+
+/* ===== COMPARISON TABLE ===== */
+.comp-table {
+  width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.88rem;
+}
+.comp-table thead { background: rgba(255,255,255,0.06); }
+.comp-table th {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--salmon); padding: 0.8rem 1rem; text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.comp-table td {
+  padding: 0.8rem 1rem; color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.comp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+/* ===== STAT BANNER ===== */
+.stat-banner {
+  background: var(--white); padding: 2.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+  border-bottom: 1px solid var(--grey-200);
+}
+.stat-item { text-align: center; }
+.stat-number {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-subtle);
+}
+
+/* ===== VERSUS GRID ===== */
+.vs-grid {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; margin-top: 2rem;
+  align-items: stretch;
+}
+.vs-col {
+  padding: 2rem 2.5rem;
+}
+.vs-col-left {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px 0 0 4px;
+}
+.vs-col-right {
+  background: rgba(13,118,128,0.12);
+  border: 1px solid rgba(13,118,128,0.2);
+  border-radius: 0 4px 4px 0;
+}
+.vs-divider {
+  width: 1px; background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.vs-badge {
+  position: absolute; background: var(--ink); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%; width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--salmon);
+}
+.vs-heading {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem;
+}
+.vs-heading-old { color: var(--warm); }
+.vs-heading-new { color: var(--accent-light); }
+.vs-item {
+  font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.7;
+  margin-bottom: 0.6rem; padding-left: 1rem;
+  border-left: 2px solid rgba(255,255,255,0.08);
+}
+.vs-item-new {
+  color: rgba(255,255,255,0.75);
+  border-left-color: var(--accent);
+}
+
+/* ===== PROCESS FLOW ===== */
+.process-flow {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 2.5rem;
+}
+.process-step {
+  text-align: center; padding: 1.5rem 1rem;
+  position: relative;
+}
+.process-step::after {
+  content: ''; position: absolute; top: 2.2rem; right: -0.5rem;
+  width: 1rem; height: 2px; background: var(--accent); opacity: 0.4;
+}
+.process-step:last-child::after { display: none; }
+.process-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent); color: var(--white);
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.process-label {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 0.4rem;
+}
+.process-desc {
+  font-size: 0.82rem; color: var(--ink-mid); line-height: 1.5;
+}
+
+/* ===== FOOTER ===== */
+.report-footer {
+  background: var(--ink); color: var(--grey-300);
+  padding: 3.5rem 2.5rem 2.5rem; font-size: 0.85rem;
+}
+.footer-inner { max-width: var(--max-width); margin: 0 auto; text-align: center; }
+.footer-logo-text {
+  font-family: 'Montserrat', var(--font-body); font-weight: 700; font-size: 1.5rem;
+  letter-spacing: 0.22em; color: var(--white); text-transform: uppercase;
+  margin-bottom: 1rem; display: block;
+}
+.footer-strapline { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 300; max-width: 500px; margin-left: auto; margin-right: auto; }
+.footer-rule { border: none; border-top: 1px solid var(--blush-dark); opacity: 0.4; max-width: 400px; margin: 0 auto 1.5rem; }
+.footer-legal { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  :root { --header-height: auto; --section-gap: 2.5rem; }
+
+  .report-header { flex-wrap: wrap; padding: 0.6rem 1.2rem; height: auto; gap: 0.2rem; }
+  .header-left { width: 100%; }
+  .header-sep { display: none; }
+  .header-label { display: none; }
+  .header-right { width: 100%; font-size: 0.62rem; padding-top: 0.2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .logo-text { font-size: 1.3rem; }
+  body { padding-top: 4.5rem; }
+
+  .hero-cover { min-height: auto; padding: 5rem 1.2rem 3rem; }
+  .hero-inner { padding: 1.8rem 1.4rem; max-width: 100%; }
+  .hero-cover h1 { font-size: 1.6rem; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-eyebrow { font-size: 0.6rem; margin-bottom: 1rem; }
+  .hero-meta { gap: 0.8rem 1.2rem; font-size: 0.58rem; }
+
+  .section-paper, .section-white, .section-ink { padding: var(--section-gap) 1.2rem; }
+  .section-inner, .section-narrow { padding: 0; }
+
+  h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.3rem; }
+  .pull-quote { font-size: 1.05rem; padding-left: 1rem; margin: 1.5rem 0; }
+  .section-text { font-size: 0.95rem; }
+
+  .stat-banner { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 1.2rem; gap: 1.2rem; }
+  .stat-number { font-size: 1.6rem; }
+  .stat-label { font-size: 0.6rem; }
+
+  .two-col { grid-template-columns: 1fr !important; }
+  .two-col-image { min-height: 220px; order: -1; }
+  .two-col-content { padding: 2rem 1.4rem; }
+
+  .image-break { height: 240px; padding: 1.5rem 1.2rem; }
+  .image-break-text { font-size: 1rem; }
+
+  .card-grid, .card-grid-3,
+  .section-inner .card-grid,
+  .section-inner > div[style],
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .card { padding: 1.3rem 1.4rem; }
+  .card-dark { padding: 1.3rem 1.4rem; }
+  .card-title { font-size: 1.05rem; }
+  .card-text { font-size: 0.88rem; }
+
+  .vs-grid { grid-template-columns: 1fr !important; gap: 1rem; }
+  .vs-col-left, .vs-col-right { border-radius: 4px; }
+  .vs-divider { display: none; }
+
+  .process-flow { grid-template-columns: 1fr !important; gap: 0.5rem; }
+  .process-step::after { display: none; }
+  .process-step { text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 0.8rem 0; }
+  .process-num { flex-shrink: 0; }
+
+  .comp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; font-size: 0.8rem; }
+  .comp-table th, .comp-table td { padding: 0.6rem 0.8rem; }
+
+  .report-footer { padding: 2.5rem 1.2rem 2rem; }
+  .footer-logo-text { font-size: 1.3rem; }
+  .footer-strapline { font-size: 0.8rem; }
+  .footer-legal { font-size: 0.72rem; }
+}
+@media print { .report-header { position: static; } body { padding-top: 0; background: var(--white); } }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="report-header">
+  <div class="header-left">
+    <span class="logo-text">NOAH</span>
+    <span class="header-sep"></span>
+    <span class="header-label">Methodology</span>
+  </div>
+  <div class="header-right">Worldwide AI Media Ltd &bull; February 2026</div>
+</header>
+
+<!-- ===== HERO COVER ===== -->
+<div class="hero-cover">
+  <div class="hero-bg" style="background-image: url('IMAGES/ivanmassow_high-resolution_photograph_of_analysts_in_a_dimly__0a286154-b8d9-49ee-9b7c-59986906fe99_3.png');"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Methodology &bull; Narrative Signal Intelligence</div>
+    <h1>Detecting Market Reality, Not Measuring Opinion</h1>
+    <p class="hero-sub">A structured methodology for identifying what is actually happening in markets and industries, before consensus forms and before surveys can capture it.</p>
+    <div class="hero-meta">
+      <span><span class="hero-dot"></span> Continuous Analysis</span>
+      <span>Probability-Weighted</span>
+      <span>Forward-Looking</span>
+      <span>Ecosystem-Scale</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== THE PROBLEM ===== -->
+<div class="section-paper">
+  <div class="section-narrow">
+    <div class="section-label section-label-accent">The Problem</div>
+    <div class="section-title">Most intelligence begins in the wrong place.</div>
+    <div class="section-text" style="margin-top: 1.5rem;">
+      <p>The dominant model in market intelligence, risk assessment and sector analysis follows a familiar sequence. An analyst forms a view. A survey is constructed around that view. Or a report is assembled to support it. Authoritative sources are layered in for credibility. The output can be rigorous and well-presented. But it remains <strong>thesis-led</strong>.</p>
+      <p>The sequence is: form a theory, gather supporting data, present with authority.</p>
+      <p>The risk is not incompetence. It is structure. If the starting assumption is incomplete, the output may measure the wrong thing very precisely. Authority reinforces consensus rather than challenging it. Markets and sectors shift in ways that static hypotheses do not anticipate.</p>
+      <p>Consider journalism. Ask any working journalist whether AI-generated content can match human editorial quality and they will say no. They will say it categorically. They will defend the craft. <strong>Our AI-structured content increases readership by 700% in the publications testing it.</strong> Not because the writing is better in some abstract literary sense, but because it is precisely calibrated to what readers actually engage with. The journalists are not wrong about what they value. They are wrong about what is happening around them.</p>
+      <p>This is the central limitation of opinion-based intelligence. People answer from what they know, what they fear, and what they believe to be true. The world moves on a different schedule.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STAT BANNER ===== -->
+<div class="stat-banner">
+  <div class="stat-item">
+    <div class="stat-number">700%</div>
+    <div class="stat-label">Readership Increase</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">6hrs</div>
+    <div class="stat-label">Ahead of Consensus</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">Continuous</div>
+    <div class="stat-label">Signal Monitoring</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">Billions</div>
+    <div class="stat-label">Records Analysed</div>
+  </div>
+</div>
+
+<!-- ===== IMAGE BREAK: CANARY WHARF ===== -->
+<div class="image-break" style="background-image: url('IMAGES/ivanmassow_Image_of_Canary_wharf._A_man_or_walking_past_it_--_6117361f-a567-494d-b338-943e8a805dfe_1.png');">
+  <div class="image-break-text">Measuring opinion is valuable. Detecting movement early is transformative.</div>
+</div>
+
+<!-- ===== A DIFFERENT STARTING POINT ===== -->
+<div class="section-paper">
+  <div class="section-narrow">
+    <div class="section-label section-label-accent">A Different Starting Point</div>
+    <div class="section-title">We don't begin with a theory. We begin with the entire information ecosystem.</div>
+    <div class="section-text" style="margin-top: 1.5rem;">
+      <p>Narrative Signal Intelligence does not start by asking <em>"What do we think is happening?"</em></p>
+      <p>It measures <em>"What patterns are forming across the system?"</em></p>
+      <p>This distinction is fundamental. Traditional analysis asks an expert to interpret the world and then finds evidence to support that interpretation. Our methodology detects density, acceleration and sentiment convergence first. <strong>Interpretation follows signal, not the other way round.</strong></p>
+      <p>The system continuously analyses signal density across a defined vertical, sentiment direction and polarity, the acceleration or deceleration of themes, cross-source convergence, and emerging inflection points. Where density, direction and velocity align, probability can be modelled.</p>
+      <p>This is not anecdotal commentary. It is structured pattern recognition across thousands of independent data points, running continuously, updating in real time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHAT WE MEASURE: PROCESS FLOW ===== -->
+<div class="section-white">
+  <div class="section-inner">
+    <div class="section-label section-label-accent">The Process</div>
+    <div class="section-title">Five layers of structured signal detection.</div>
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div>
+          <div class="process-label">Ingest</div>
+          <div class="process-desc">Continuous ingestion from thousands of global sources across a defined vertical.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div>
+          <div class="process-label">Detect</div>
+          <div class="process-desc">Signal density, sentiment polarity and narrative acceleration identified automatically.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div>
+          <div class="process-label">Converge</div>
+          <div class="process-desc">Cross-source convergence mapped. Independent signals reinforcing the same direction are clustered.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div>
+          <div class="process-label">Model</div>
+          <div class="process-desc">Where density, direction and velocity align, probability-weighted forecasts are generated.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <div>
+          <div class="process-label">Output</div>
+          <div class="process-desc">Structured intelligence products: trend reports, risk assessments, probability dashboards, trading signals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TWO COLUMN: SURVEYS ===== -->
+<div class="two-col">
+  <div class="two-col-image" style="background-image: url('IMAGES/ivanmassow_high-resolution_photograph_of_illuminated_data_cab_e8657a0a-3a51-430e-8f0c-57dfdd082436_0.png');"></div>
+  <div class="two-col-content">
+    <div class="section-label">The Survey Problem</div>
+    <div class="section-title">Surveys measure responses to predefined questions. They operate within the framing selected in advance.</div>
+    <p>Survey research is effective for measuring declared intent, capturing preference and testing specific hypotheses. If the question is <em>"What do you intend to do?"</em> a survey is the appropriate instrument.</p>
+    <p>But declared opinion reflects what respondents consciously recognise at the time. Structural shifts in markets and industries begin before those shifts are articulated. <strong>People answer from legacy thinking, their own prejudices, their own fears, and the limits of their knowledge.</strong></p>
+    <p>Ask a taxi driver in 2010 whether ride-hailing apps would replace their industry. Ask a print journalist in 2020 whether algorithmic content would outperform editorial. The answer tells you about the respondent. It tells you very little about the direction of travel.</p>
+    <p>Narrative signal analysis operates <strong>upstream of question design</strong>. It identifies what deserves to be questioned.</p>
+  </div>
+</div>
+
+<!-- ===== THE TIME HORIZON ===== -->
+<div class="section-ink">
+  <div class="section-inner">
+    <div class="section-label section-label-salmon">The Time Horizon</div>
+    <div class="section-title section-title-light">Three different questions. Three different answers.</div>
+
+    <div class="card-grid-3" style="margin-top: 2rem;">
+      <div class="card-dark card-warm-top">
+        <div class="card-label card-label-warm">Traditional Reports</div>
+        <div class="card-title card-title-light">What has happened?</div>
+        <p class="card-text card-text-light">Retrospective analysis. Explains events after they have occurred. Useful for context, but always looking backwards. By the time the report is published, the market has already moved.</p>
+      </div>
+      <div class="card-dark card-warm-top">
+        <div class="card-label card-label-warm">Survey Intelligence</div>
+        <div class="card-title card-title-light">What do people say?</div>
+        <p class="card-text card-text-light">Captures a snapshot of opinion at a moment in time. Bounded by the questions asked, the respondents selected, and the assumptions embedded in the design. Periodic, not continuous.</p>
+      </div>
+      <div class="card-dark card-accent-top">
+        <div class="card-label">Narrative Signal Intelligence</div>
+        <div class="card-title card-title-light">What is forming now?</div>
+        <p class="card-text card-text-light">Forward-trajectory model. Detects shifts while they are still emerging, not once they are codified. Continuous, probability-weighted, and structurally independent of any individual analyst's thesis.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote pull-quote-light" style="margin-top: 2.5rem;">Legacy intelligence explains the past convincingly. Narrative Signal Intelligence models the future probabilistically.</div>
+  </div>
+</div>
+
+<!-- ===== VERSUS COMPARISON ===== -->
+<div class="section-ink" style="padding-top: 0;">
+  <div class="section-inner">
+    <div class="section-label section-label-salmon">Side by Side</div>
+    <div class="section-title section-title-light">The structural difference.</div>
+
+    <div class="vs-grid">
+      <div class="vs-col vs-col-left">
+        <div class="vs-heading vs-heading-old">Traditional Approach</div>
+        <div class="vs-item">Analyst forms hypothesis first</div>
+        <div class="vs-item">Evidence gathered to support thesis</div>
+        <div class="vs-item">Authority sources layered for credibility</div>
+        <div class="vs-item">Periodic reporting cycles</div>
+        <div class="vs-item">Retrospective or snapshot-based</div>
+        <div class="vs-item">Bounded by questions asked</div>
+        <div class="vs-item">Consensus-reinforcing</div>
+      </div>
+      <div class="vs-divider"><div class="vs-badge">vs</div></div>
+      <div class="vs-col vs-col-right">
+        <div class="vs-heading vs-heading-new">Narrative Signal Intelligence</div>
+        <div class="vs-item vs-item-new">Signal detected first, interpretation follows</div>
+        <div class="vs-item vs-item-new">Patterns emerge from ecosystem data</div>
+        <div class="vs-item vs-item-new">Convergence across independent sources</div>
+        <div class="vs-item vs-item-new">Continuous, real-time monitoring</div>
+        <div class="vs-item vs-item-new">Forward-looking, probability-weighted</div>
+        <div class="vs-item vs-item-new">Surfaces what merits questioning</div>
+        <div class="vs-item vs-item-new">Consensus-challenging</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHERE IT COMPETES ===== -->
+<div class="section-paper">
+  <div class="section-inner">
+    <div class="section-label section-label-accent">Scope</div>
+    <div class="section-title">Where it competes. Where it does not.</div>
+    <div class="section-text" style="margin-top: 1rem; margin-bottom: 2rem;">
+      <p>Narrative Signal Intelligence is not a replacement for every form of research. It operates on a different data plane: <strong>ecosystem momentum</strong>. Understanding where it applies, and where it does not, is part of using it properly.</p>
+    </div>
+
+    <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="card card-accent-top">
+        <div class="card-label">Competes With</div>
+        <div class="card-title">Thesis-led intelligence</div>
+        <p class="card-text">Analyst-led market commentary where a view is formed first and evidence assembled afterwards. Authority-layered reports that reinforce existing consensus. Reactive intelligence briefings that explain what has already happened. Periodic survey cycles that capture a snapshot of opinion within a predetermined frame.</p>
+      </div>
+      <div class="card card-warm-top">
+        <div class="card-label card-label-warm">Does Not Replace</div>
+        <div class="card-title">Direct behavioural measurement</div>
+        <p class="card-text">Operational data collection from internal systems. Direct behavioural surveys measuring specific stated intent. Internal performance metrics and KPIs. Controlled experiments and A/B testing. These are valuable instruments for different questions. Narrative signal analysis sits upstream, identifying what those instruments should be pointed at.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHY NOW ===== -->
+<div class="section-white">
+  <div class="section-narrow">
+    <div class="section-label section-label-accent">Why This Matters Now</div>
+    <div class="section-title">Markets move faster than traditional research cycles.</div>
+    <div class="section-text" style="margin-top: 1.5rem;">
+      <p>Survey cycles are periodic. Narrative systems are continuous. Survey design requires selecting questions in advance. Narrative systems surface what merits questioning. Forecasting models built on static assumptions struggle when acceleration changes the underlying structure.</p>
+      <p>A system that measures independent signal convergence at scale adapts dynamically. It provides a <strong>live map of direction of travel</strong>.</p>
+      <p>When traditional intelligence is published, it describes a world that has already changed. When a survey reports its findings three months after fieldwork, the respondents' answers reflect a reality that may no longer exist. The gap between observation and reality widens as the pace of change increases.</p>
+      <p>Narrative Signal Intelligence closes that gap. Not by claiming certainty, but by identifying where structural momentum increases the likelihood of particular outcomes.</p>
+    </div>
+    <div class="pull-quote" style="margin-top: 2rem;">When trajectory becomes visible before consensus forms, leadership decisions shift from reactive to anticipatory. That is the methodological difference.</div>
+  </div>
+</div>
+
+<!-- ===== THE REAL DISTINCTION ===== -->
+<div class="section-ink">
+  <div class="section-inner" style="text-align: center; max-width: 700px;">
+    <div class="section-label section-label-salmon">The Core Principle</div>
+    <div class="section-title section-title-light" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1.5rem;">Measuring opinion is valuable.<br>Detecting movement early is transformative.</div>
+    <div class="section-text section-text-light" style="margin: 0 auto; text-align: center;">
+      <p>Not by claiming to know the future. By identifying where structural momentum, cross-source convergence and narrative acceleration make particular outcomes significantly more probable.</p>
+      <p>This is how Noah produces intelligence that outperforms traditional analysis, survey-based research and thesis-led commentary. Not through better opinions, but through a fundamentally different relationship with information.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="report-footer">
+  <div class="footer-inner">
+    <span class="footer-logo-text">NOAH</span>
+    <p class="footer-strapline">Narrative Signal Intelligence</p>
+    <hr class="footer-rule">
+    <p class="footer-legal">
+      Worldwide AI Media Ltd &bull; Registered in England &amp; Wales<br>
+      This document is confidential and intended for the recipient only.<br>
+      &copy; 2026 Worldwide AI Media Ltd. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
